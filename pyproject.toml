@@ -12,6 +12,13 @@ django = "^4.1.6"
 pre-commit = "^3.0.3"
 
 
+[tool.poetry.group.dev.dependencies]
+commitizen = "^2.42.1"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.commitizen]
+version = "0.1.0"

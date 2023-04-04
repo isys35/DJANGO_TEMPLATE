@@ -2,6 +2,7 @@
 version = "0.1.4"
 version_files = [
     "pyproject.toml:version",
+    "src/django_project/__version__.py",
 ]
 
 [tool.poetry]

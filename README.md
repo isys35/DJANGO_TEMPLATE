@@ -4,6 +4,3 @@
 ```shell
 bash start_pre-commit.sh
 ```
-
-
-Тест bump-version

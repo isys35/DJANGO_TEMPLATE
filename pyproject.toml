@@ -17,6 +17,7 @@ packages = [{include = "django_template"}]
 python = "^3.11"
 django = "^4.1.6"
 pre-commit = "^3.0.3"
+psycopg2-binary = "^2.9.6"
 
 
 [tool.poetry.group.dev.dependencies]

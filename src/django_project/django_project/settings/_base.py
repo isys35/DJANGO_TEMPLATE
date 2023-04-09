@@ -10,12 +10,17 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
+import sys
 from pathlib import Path
 
 from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+EXTERNAL_BASE = BASE_DIR / "externals"
+EXTERNAL_LIBS_PATH = EXTERNAL_BASE / "libs"
+EXTERNAL_APPS_PATH = EXTERNAL_BASE / "apps"
+sys.path = ["", EXTERNAL_LIBS_PATH, EXTERNAL_APPS_PATH] + sys.path
 
 
 def get_secret(setting):
@@ -51,7 +56,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # third-party
-    # ...
+    "externals.apps.webpack_boilerplate"
     # local
     # ...
 ]
@@ -123,7 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "ru"
 
-TIME_ZONE = "UTC+3"
+TIME_ZONE = "Europe/Moscow"
 
 USE_I18N = True
 
@@ -134,14 +139,19 @@ USE_TZ = True
 
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "django_project", "static"),
+    BASE_DIR / "django_project/static",
+    BASE_DIR / "django_project/webpack/build",
 ]
+
+WEBPACK_LOADER = {
+    "MANIFEST_FILE": BASE_DIR / "django_project/webpack/build/manifest.json",
+}
 
 with open(os.path.join(BASE_DIR, "django_project", "settings", "last-update.txt")) as f:
     timestamp = f.readline().strip()
 
 STATIC_URL = f"/static/{timestamp}/"
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = BASE_DIR / "static"
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")

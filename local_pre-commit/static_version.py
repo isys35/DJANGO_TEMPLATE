@@ -29,6 +29,14 @@ def add_to_git(file_path):
     return base.decode("utf-8").strip()
 
 
+def update_index(file_path):
+    try:
+        base = check_output(["git", "update-index", "-z", "--index-info"])
+    except CalledProcessError:
+        raise OSError("Current working directory is not a git repository")
+    return base.decode("utf-8").strip()
+
+
 def main():
     file_path = abspath("src/django_project/last-update.txt")
     with open(file_path, "w") as f:

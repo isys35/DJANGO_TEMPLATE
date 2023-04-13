@@ -29,7 +29,7 @@ def add_to_git(file_path):
     return base.decode("utf-8").strip()
 
 
-def update_index(file_path):
+def update_index():
     try:
         base = check_output(["git", "update-index", "-z", "--index-info"])
     except CalledProcessError:
@@ -42,6 +42,7 @@ def main():
     with open(file_path, "w") as f:
         f.write(datetime.now().strftime("%Y%m%d%H%M%S"))
     add_to_git(file_path)
+    update_index()
 
 
 if __name__ == "__main__":

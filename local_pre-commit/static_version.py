@@ -42,6 +42,7 @@ def main():
     with open(file_path, "w") as f:
         f.write(datetime.now().strftime("%Y%m%d%H%M%S"))
     add_to_git(file_path)
+    check_output(["git", "update-index", "-g"])
     # update_index()
 
 

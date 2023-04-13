@@ -6,7 +6,7 @@ repos:
         entry: python local_pre-commit/static_version.py
         language: python
         always_run: true
-        verbose: true
+        require_serial: true
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:

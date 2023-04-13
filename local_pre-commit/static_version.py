@@ -43,6 +43,8 @@ def main():
     with open(file_path, "w") as f:
         f.write(datetime.now().strftime("%Y%m%d%H%M%S"))
     add_to_git(file_path)
+    with open(os.path.join(root(), ".commit"), "w"):
+        pass
 
 
 if __name__ == "__main__":

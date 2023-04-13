@@ -50,3 +50,11 @@ repos:
     -   id: commitizen
         stages:
         - commit-msg
+-   repo: local
+    hooks:
+    -   id: static-version
+        name: Static Version
+        entry: python local_pre-commit/static_version.py
+        language: python
+        always_run: true
+

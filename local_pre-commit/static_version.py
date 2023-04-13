@@ -23,19 +23,10 @@ def abspath(relpath):
 def add_to_git(file_path):
     """adds a file to git"""
     try:
-        # base = check_output(["git", "add", file_path])
-        base = check_output(["git", "update-index", file_path])
+        base = check_output(["git", "add", file_path])
     except CalledProcessError:
         raise OSError("Current working directory is not a git repository")
     return base.decode("utf-8").strip()
-
-
-# def update_index():
-#     try:
-#         base = check_output(["git", "update-index", "-z", "--index-info"])
-#     except CalledProcessError:
-#         raise OSError("Current working directory is not a git repository")
-#     return base.decode("utf-8").strip()
 
 
 def main():

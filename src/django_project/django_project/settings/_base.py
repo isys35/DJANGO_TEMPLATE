@@ -147,7 +147,7 @@ WEBPACK_LOADER = {
     "MANIFEST_FILE": BASE_DIR / "django_project/webpack/build/manifest.json",
 }
 
-with open(os.path.join(BASE_DIR, "django_project", "settings", "last-update.txt")) as f:
+with open(os.path.join(BASE_DIR, "last-update.txt")) as f:
     timestamp = f.readline().strip()
 
 STATIC_URL = f"/static/{timestamp}/"

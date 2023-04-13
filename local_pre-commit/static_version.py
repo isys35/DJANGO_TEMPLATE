@@ -29,21 +29,11 @@ def add_to_git(file_path):
     return base.decode("utf-8").strip()
 
 
-# def ammend(file_path):
-#     """adds a file to git"""
-#     try:
-#         base = check_output(["git", "commit", "--amend", "--no-edit", "--no-verify"])
-#     except CalledProcessError:
-#         raise OSError("Ammend error")
-#     return base.decode("utf-8").strip()
-
-
 def main():
     file_path = abspath("src/django_project/last-update.txt")
     with open(file_path, "w") as f:
         f.write(datetime.now().strftime("%Y%m%d%H%M%S"))
     add_to_git(file_path)
-    # ammend(file_path)
 
 
 if __name__ == "__main__":

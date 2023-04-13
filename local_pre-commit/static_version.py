@@ -23,7 +23,8 @@ def abspath(relpath):
 def add_to_git(file_path):
     """adds a file to git"""
     try:
-        base = check_output(["git", "add", "."])
+        base = check_output(["git", "add", file_path])
+        base = check_output(["git", "update-index", "-g"])
     except CalledProcessError:
         raise OSError("Current working directory is not a git repository")
     return base.decode("utf-8").strip()
@@ -42,8 +43,6 @@ def main():
     with open(file_path, "w") as f:
         f.write(datetime.now().strftime("%Y%m%d%H%M%S"))
     add_to_git(file_path)
-    check_output(["git", "update-index", "-g"])
-    # update_index()
 
 
 if __name__ == "__main__":

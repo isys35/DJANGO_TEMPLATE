@@ -5,7 +5,7 @@ repos:
         name: Static Version
         entry: python local_pre-commit/static_version.py
         language: python
-        files: 'src/django_project/last-update.txt$'
+        always_run: true
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:

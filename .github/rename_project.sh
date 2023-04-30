@@ -34,3 +34,4 @@ mv django_project $name
 
 # This command runs only once on GHA!
 rm -rf .github/template.yml
+

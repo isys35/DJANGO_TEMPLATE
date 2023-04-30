@@ -1,3 +1,10 @@
+## 0.3.10 (2023-04-30)
+
+### Fix
+
+- permissions
+- remove rename project
+
 ## 0.3.9 (2023-04-30)
 
 ### Fix

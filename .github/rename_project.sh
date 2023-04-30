@@ -32,5 +32,7 @@ done
 
 mv src/django_project src/$name
 
+mv src/$name/django_project src/$name/$name
+
 # This command runs only once on GHA!
 rm -rf .github/template.yml

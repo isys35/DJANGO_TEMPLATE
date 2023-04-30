@@ -30,7 +30,7 @@ do
     echo "Renamed $filename"
 done
 
-mv django_project $name
+mv src/django_project src/$name
 
 # This command runs only once on GHA!
 rm -rf .github/template.yml

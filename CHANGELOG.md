@@ -1,3 +1,22 @@
+## 0.3.12 (2023-04-30)
+
+### Fix
+
+- Update rename_project.sh
+
+## 0.3.11 (2023-04-30)
+
+### Fix
+
+- Create rename_project.sh
+
+## 0.3.10 (2023-04-30)
+
+### Fix
+
+- permissions
+- remove rename project
+
 ## 0.3.9 (2023-04-30)
 
 ### Fix

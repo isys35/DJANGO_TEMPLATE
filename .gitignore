@@ -142,3 +142,4 @@ build_test.sh
 **/node_modules/
 
 .commit
+/src/django_project/static/

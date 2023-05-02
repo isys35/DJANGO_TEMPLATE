@@ -36,10 +36,7 @@ SECRET_KEY = get_secret("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    "127.0.0.1",
-    "0.0.0.0",
-]
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -138,9 +135,6 @@ DJANGO_VITE_DEV_MODE = DEBUG
 
 STATICFILES_DIRS = [BASE_DIR / "django_project/static", DJANGO_VITE_ASSETS_PATH]
 
-
-with open(os.path.join(BASE_DIR, "last-update.txt")) as f:
-    timestamp = f.readline().strip()
 
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "static"

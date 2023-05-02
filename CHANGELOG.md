@@ -1,3 +1,11 @@
+## 0.1.0 (2023-05-02)
+
+### Fix
+
+- Update __version__.py
+- Update pyproject.toml
+- Update pyproject.toml
+
 ## 0.3.18 (2023-05-02)
 
 ### Fix

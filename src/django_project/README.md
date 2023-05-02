@@ -14,14 +14,11 @@ django_project/
 │   └── production.py
 ├── static/
 ├── templates/
-├── webpack/
-├── __init__.py
 ├── asgi.py
 ├── urls.py
 └── wsgi.py
 externals/
 ├── apps/
-│   └── webpack_boilerplate
 └── libs/
 __version__.py
 last-update.txt

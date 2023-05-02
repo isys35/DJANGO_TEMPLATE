@@ -1,35 +1,19 @@
 <!doctype html>
-{% load webpack_loader static %}
+{% load django_vite %}
 <html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" type="image/png" href="{% static 'assets/dist/images/icon.png' %}" sizes="16x16" />
-      {% stylesheet_pack 'app' %}
-      {% block style %}
-    {% endblock %}
     <title>Hello, World!</title>
+    {% vite_asset "src/main.js" %}
+    {% vite_hmr_client %}
   </head>
   <body>
-    <div class="container mt-5">
-        <div class="jumbotron py-5">
-          <div class="container">
-            <h1 class="display-3">Hello, world!</h1>
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called a
-              jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
-
-            <div class="d-flex justify-content-center">
-              <img src="{% static 'vendors/images/webpack.png' %}" class="img-fluid"/>
-            </div>
-
-          </div>
-        </div>
-      {% block content %}
-      {% endblock %}
+    <div>
+        {% block content %}
+        {% endblock %}
     </div>
-    {% javascript_pack 'app' 'app2' attrs='charset="UTF-8"' %}
     {% block js %}
     {% endblock %}
   </body>

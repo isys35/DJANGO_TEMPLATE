@@ -18,8 +18,8 @@ echo "Renaming project..."
 
 original_author="isys35"
 original_name="django_project"
-original_urlname="django_project"
-original_description="Awesome django_project created by isys35"
+original_urlname="django_project_urlname"
+original_description="django_project_description"
 # for filename in $(find . -name "*.*") 
 for filename in $(git ls-files) 
 do
